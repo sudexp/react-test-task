@@ -15,4 +15,9 @@ const IsFive = ({ value }) => {
   return <h3>{getResult}</h3>;
 };
 
-export default memo(IsFive);
+export default memo(IsFive, (prevProps, nextProps) => {
+  // prevent shallow props comparison
+  if (nextProps.value === 5) return false;
+
+  return true;
+});
