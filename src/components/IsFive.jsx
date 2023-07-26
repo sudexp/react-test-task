@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, memo } from 'react';
 
 let renderCount = 0;
 
@@ -15,4 +15,4 @@ const IsFive = ({ value }) => {
   return <h3>{getResult}</h3>;
 };
 
-export default IsFive;
+export default memo(IsFive);
